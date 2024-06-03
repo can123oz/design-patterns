@@ -5,9 +5,9 @@ import DesignPatterns.example.DesignPatterns.enumFactory.payment.Payment;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CreditCardPayment implements Payment {
+public class WireTransferEnumPayment implements Payment {
     @Override
     public String pay(PaymentRequest paymentRequest) {
-        return "Credit Card Payment with Enum Type : " + paymentRequest.orderId();
+        return "Wire Transfer with Enum Type : " + paymentRequest.orderId();
     }
 }

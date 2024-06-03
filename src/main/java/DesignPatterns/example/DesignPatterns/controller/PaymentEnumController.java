@@ -1,6 +1,7 @@
 package DesignPatterns.example.DesignPatterns.controller;
 
 import DesignPatterns.example.DesignPatterns.dto.PaymentRequest;
+import DesignPatterns.example.DesignPatterns.enumFactory.PaymentEnumType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentEnumController {
     @PostMapping
     public ResponseEntity<String> pay(@RequestBody PaymentRequest paymentRequest) {
-        return ResponseEntity.ok("in progress");
+        String result = PaymentEnumType.getPaymentType(paymentRequest.paymentType())
+                .getPayment()
+                .pay(paymentRequest);
+        return ResponseEntity.ok(result);
     }
 }

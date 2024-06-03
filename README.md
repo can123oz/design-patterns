@@ -24,7 +24,3 @@ To run the project, follow these steps:
 
 1. Run the Docker container: `docker run -p 8080:8080 your-image-name`
 2. Open a web browser and navigate to: [http://localhost:8080/swagger-ui/index.html#/](http://localhost:8080/swagger-ui/index.html#/)
-
-## Contact
-
-If you have any questions or suggestions, feel free to contact [your contact information].
