@@ -13,8 +13,8 @@ Before you begin, ensure you have met the following requirements:
 
 To install the project, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your/repository.git`
-2. Navigate to the project directory: `cd project-directory`
+1. Clone the repository: `git clone https://github.com/can123oz/design-patterns.git`
+2. Navigate to the project directory: `cd design-patterns`
 3. Build the project with Maven (skipping tests): `mvn clean package -DskipTests`
 4. Build the Docker image: `docker build -t your-image-name .`
 
