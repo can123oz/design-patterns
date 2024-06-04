@@ -37,12 +37,21 @@ jobs:
         run: mvn -B package --file pom.xml
       - name: Update dependency graph
         uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
-      - name: Build and Push Docker Image
-        uses: mr-smithers-excellent/docker-build-push@v6
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
+    steps:
+      - uses: actions/checkout@v3
+        name: Check out code
+
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: Build & push Docker image
         with:
           image: canozdemir/design-patterns
-          tags: v1, latest
-          registry: registry-url.io
-          dockerfile: Dockerfile.ci
+          registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
