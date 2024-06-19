@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v2/api/payment")
+@RequestMapping("/api/v2/payment")
 public class PaymentEnumController {
     @PostMapping
     public ResponseEntity<String> pay(@RequestBody PaymentRequest paymentRequest) {
